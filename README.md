@@ -2,8 +2,8 @@
 
 This package provides two functions:
 
- * `weak-ref' -- Creates a weak reference to an object
- * `deref' -- Access the object behind a weak reference
+ * `weak-ref` -- Creates a weak reference to an object
+ * `deref` -- Access the object behind a weak reference
 
 See it in action:
 
