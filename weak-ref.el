@@ -11,15 +11,15 @@
 ;; hash table keys and values. This can be exploited to generalize
 ;; weak references into two convenient macros:
 
-;;   * `weak-ref' -- create a weak reference to an object
-;;   * `deref' -- access the object behind a weak reference
+;;   * `weak-ref'   : create a weak reference to an object
+;;   * `weak-deref' : access the object behind a weak reference
 
 ;; The weakness can be demonstrated like so:
 
 ;;     (setq ref (weak-ref (list 1 2 3)))
-;;     (deref ref) ; => (1 2 3)
+;;     (weak-deref ref) ; => (1 2 3)
 ;;     (garbage-collect)
-;;     (deref ref) ; => nil
+;;     (weak-deref ref) ; => nil
 
 ;;; Code:
 
@@ -30,7 +30,7 @@ will not be protected from garbage collection by this reference."
     (prog1 ref
       (puthash t thing ref))))
 
-(defun deref (ref)
+(defun weak-deref (ref)
   "Get the object referenced by REF. Returns NIL if the object no
 longer exists (garbage collected)."
   (gethash t ref))
