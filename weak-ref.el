@@ -12,14 +12,14 @@
 ;; weak references into two convenient macros:
 
 ;;   * `weak-ref'   : create a weak reference to an object
-;;   * `weak-deref' : access the object behind a weak reference
+;;   * `weak-ref-deref' : access the object behind a weak reference
 
 ;; The weakness can be demonstrated like so:
 
 ;;     (setq ref (weak-ref (list 1 2 3)))
-;;     (weak-deref ref) ; => (1 2 3)
+;;     (weak-ref-deref ref) ; => (1 2 3)
 ;;     (garbage-collect)
-;;     (weak-deref ref) ; => nil
+;;     (weak-ref-deref ref) ; => nil
 
 ;;; Code:
 
@@ -31,7 +31,7 @@ collection by this reference."
     (prog1 ref
       (puthash t thing ref))))
 
-(defun weak-deref (ref)
+(defun weak-ref-deref (ref)
   "Return the object referenced by REF.
 Return NIL if the object no longer exists (garbage collected)."
   (gethash t ref))
