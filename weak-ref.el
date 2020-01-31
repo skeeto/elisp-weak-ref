@@ -24,15 +24,16 @@
 ;;; Code:
 
 (defun weak-ref (thing)
-  "Create a new weak reference to THING. The referenced object
-will not be protected from garbage collection by this reference."
+  "Return a new weak reference to THING.
+The referenced object will not be protected from garbage
+collection by this reference."
   (let ((ref (make-hash-table :size 1 :weakness t :test 'eq)))
     (prog1 ref
       (puthash t thing ref))))
 
 (defun weak-deref (ref)
-  "Get the object referenced by REF. Returns NIL if the object no
-longer exists (garbage collected)."
+  "Return the object referenced by REF.
+Return NIL if the object no longer exists (garbage collected)."
   (gethash t ref))
 
 (provide 'weak-ref)
