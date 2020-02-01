@@ -4,9 +4,10 @@
 
 ;; Author: Christopher Wellons <wellons@nullprogram.com>
 ;; Homepage: https://github.com/skeeto/elisp-weak-ref
+;; Package-Requires: ((emacs "24"))
 ;; Version: 2.0
 
-;;; Commentary;
+;;; Commentary:
 
 ;; The Emacs Lisp environment supports weak references, but only for
 ;; hash table keys and values. This can be exploited to generalize
