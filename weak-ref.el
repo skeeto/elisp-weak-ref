@@ -4,7 +4,7 @@
 
 ;; Author: Christopher Wellons <wellons@nullprogram.com>
 ;; Homepage: https://github.com/skeeto/elisp-weak-ref
-;; Package-Requires: ((emacs "24"))
+;; Package-Requires: ((emacs "24.3"))
 ;; Version: 2.0
 
 ;;; Commentary:
