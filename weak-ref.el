@@ -1,9 +1,10 @@
-;;; weak-ref.el --- weak references for Emacs Lisp
+;;; weak-ref.el --- weak references for Emacs Lisp -*- lexical-binding: t; -*-
 
 ;; This is free and unencumbered software released into the public domain.
 
-;; Author: Christopher Wellons <mosquitopsu@gmail.com>
-;; Version: 1.0
+;; Author: Christopher Wellons <wellons@nullprogram.com>
+;; Homepage: https://github.com/skeeto/elisp-weak-ref
+;; Version: 2.0
 
 ;;; Commentary;
 
@@ -23,7 +24,7 @@
 
 ;;; Code:
 
-(defun weak-ref (thing)
+(defsubst weak-ref (thing)
   "Return a new weak reference to THING.
 The referenced object will not be protected from garbage
 collection by this reference."
@@ -31,7 +32,7 @@ collection by this reference."
     (prog1 ref
       (puthash t thing ref))))
 
-(defun weak-ref-deref (ref)
+(defsubst weak-ref-deref (ref)
   "Return the object referenced by REF.
 Return NIL if the object no longer exists (garbage collected)."
   (gethash t ref))
