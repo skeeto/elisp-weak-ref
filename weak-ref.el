@@ -23,6 +23,8 @@
 ;;     (garbage-collect)
 ;;     (weak-ref-deref ref) ; => nil
 
+;; See also: https://github.com/melpa/melpa/pull/6670
+
 ;;; Code:
 
 (defsubst weak-ref (thing)
