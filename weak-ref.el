@@ -1,4 +1,4 @@
-;;; weak-ref.el --- weak references for Emacs Lisp -*- lexical-binding: t; -*-
+;;; weak-ref.el --- Weak references for Emacs Lisp -*- lexical-binding: t; -*-
 
 ;; This is free and unencumbered software released into the public domain.
 
